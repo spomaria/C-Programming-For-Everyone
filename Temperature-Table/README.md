@@ -89,6 +89,52 @@ This will produce a `a.out` file in the same directory as our `tempWithForLoop.c
 ./a.out
 ```
 
+## Temperature Converter Using Symbolic Constants in a For Loop
+Lastly, in the Temperature Converter Program above, we can use symbolic constants to define the limits by using the `#define ` keyword followed by the constant's name in capital letters and the corresponding value all separated by space but without any assignment operator or semi-colon at the end of the statement. To accomplish this task, we create another file and name it `tempWithSymbolicContants.c` by using the following bash command
+```bash
+touch tempWithSymbolicContants.c
+```
+Inside our `tempWithSymbolicContants.c` file, we write our codes as follows
+```C
+#include <stdio.h>
+
+/* Print Fahrenheit-Celsius table
+for f = 0, 20, ..., 300
+
+Now we define the constans 0, 20, and 300*/
+
+#define LOWER 0 /* lower limit of table*/
+#define UPPER 300 /* upper limit*/
+#define STEP 20 /* step size */
+/* Note that by using the #define keyword 
+to define constants, we ommit the assignment
+operator '=' and the semi-colon
+at the end of each statement*/
+int main() /* Fahrenheit-Celsius table */
+{
+    /* code */
+    int fahr;
+    /* Print a heading for the table*/
+    printf("Fahrenheit \t Celsius\n");
+    /* use a for loop to generate the table*/
+    for (fahr = LOWER; fahr <= UPPER; fahr += STEP)
+    {
+        printf("%4d \t %6.1f\n", fahr, (5.0/9.0) * (fahr - 32.0));
+    }
+    
+    return 0;
+}
+```
+
+To compile our script, we use the following bash command
+```bash
+gcc -ansi tempWithSymbolicContants.c
+```
+This will produce a `a.out` file in the same directory as our `tempWithSymbolicContants.c` file upon successful compilation. In order to interact with our program, we run the following bash command
+```bash
+./a.out
+```
+
 
 ## Authors
 Nengak Emmanuel Goltong 
